@@ -24,3 +24,27 @@ Output: [0,1]
 - `10,000,000 <= nums[i] <= 10,000,000`
 - `10,000,000 <= target <= 10,000,000`
 - Only one valid answer exists.
+
+## Solution Overview
+
+For this problem we use a hash map to store previously seen numbers and their indices.
+The idea is to iterate through the array and, for each number, calculate its complement (target - num).
+• If the complement is already in the hash map, we have found the pair and return their indices.
+• If not, we store the current number with its index in the hash map.
+Since the problem guarantees exactly one solution, this approach will always find the correct pair.
+
+Start
+  ↓
+Initialize empty hash map (seen)
+  ↓
+Loop through nums with index i
+  ↓
+Calculate complement = target - nums[i]
+  ↓
+Is complement in hash map?
+  ├─ Yes → return [seen[complement], i]
+  └─ No  → store nums[i] in hash map with index i
+  ↓
+Continue loop until pair is found
+  ↓
+End
