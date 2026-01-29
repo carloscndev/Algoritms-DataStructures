@@ -1,7 +1,7 @@
-function isValid(s: string) {
+function isValid(s: string): boolean {
   const stack = [];
-  const openBrackets = new Set(['(', '[', '{']);
-  const matchingBrackets = { ')': '(', ']': '[', '}': '{' };
+  const openBrackets: Set<string> = new Set(['(', '[', '{']);
+  const matchingBrackets: { [key: string]: string } = { ')': '(', ']': '[', '}': '{' };
 
   for (let char of s) {
     if (openBrackets.has(char)) {
