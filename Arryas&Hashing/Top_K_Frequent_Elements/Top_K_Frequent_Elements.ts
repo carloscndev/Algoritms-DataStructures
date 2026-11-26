@@ -7,7 +7,7 @@ function topKFrequent(nums: number[], k: number): number[] {
  const buckets: number[][] = Array(nums.length + 1).fill(null).map(() => []);
   for (let num in freqMap) {
       const freq = freqMap[num];
-    buckets[freq].push(Number(num));
+      buckets[freq].push(Number(num));
   }
 
   const result: number[] = [];
